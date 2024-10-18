@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em; /* Заголовок меню */
+}
+
+/* Основная сетка для мобильного вида */
+main {
+    display: grid;
+    grid-template-columns: 1fr; /* Каждая секция занимает всю строку */
+    gap: 10px; /* Отступы между секциями */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.section {
+    position: relative;
+    border: 1px solid #000;
+    padding: 20px;
+    background-color: #d3d3d3; /* Фон секции */
+}
+
+.section-title {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    background-color: #ffcccc; /* Фон заголовка */
+    border: 1px solid #000;
+    font-weight: bold;
+}
+
+#section1 .section-title {
+    background-color: #ff9999; /* Цвет заголовка для Chicken */
+}
+
+#section2 .section-title {
+    background-color: #ff6666; /* Цвет заголовка для Beef */
+}
+
+#section3 .section-title {
+    background-color: #f5deb3; /* Цвет заголовка для Sushi */
+}
+
+.section p {
+    margin-top: 40px; /* Отступ текста от заголовка */
+    text-align: left;  /* Выравнивание текста по левому краю */
+}
+
+
+
+@media (min-width: 768px) and (max-width: 991px) {
+    main {
+        grid-template-columns: repeat(2, 1fr); /* Две колонки */
+        grid-template-rows: auto auto; /* Третья секция на следующей строке */
+        gap: 10px; /* Отступы между секциями */
+    }
+
+    #section3 {
+        grid-column: 1 / -1; /* Третья секция занимает всю строку */
+    }
+}
+
+
+@media (min-width: 992px) {
+    main {
+        grid-template-columns: repeat(3, 1fr); /* Три колонки */
+        gap: 10px; /* Отступы между секциями */
+    }
+}
